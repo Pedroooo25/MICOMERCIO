@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPESA - Tienda Deportiva</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://i.pinimg.com/originals/98/34/66/983466ddf30a88bf189b1efa13c335f7.jpg') no-repeat center center fixed; /* Fondo deportivo */
+            background-size: cover;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        header img {
+            width: 220px;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        nav {
+            background: #1f1f1f;
+            padding: 15px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #99bdf2;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #ac99f2;
+            color: #1f1f1f;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .contenedor {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin: 20px 0;
+            padding: 20px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .contenedor:hover {
+            transform: translateY(-5px);
+        }
+
+        .contenedor h2 {
+            color: #9f99f2;
+            font-size: 2.5em;
+            border-bottom: 2px solid #99caf2;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        .contenedor p {
+            color: #ccc;
+            font-size: 18px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background: #1f1f1f;
+            color: #99b1f2;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            margin: 20px auto;
+            width: 60%;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        .producto {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .producto img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .producto h3 {
+            color: #b499f2;
+        }
+
+        .producto p {
+            color: #ccc;
+            font-size: 18px;
+        }
+
+        .producto button {
+            background-color: #ac99f2;
+            color: #1f1f1f;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .producto button:hover {
+            background-color: #25b9d3;
+            color: white;
+        }
+
+        #carrito {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #carrito h3 {
+            margin-top: 0;
+        }
+
+        #carrito ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #carrito ul li {
+            margin-bottom: 10px;
+            color: #99f2c8;
+        }
+
+        #carrito ul li button {
+            background-color: #ff3333;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #carrito ul li button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://okdiario.com/img/2022/12/18/messi-balon-de-oro-655x368.jpg" alt="Logo CAPESA">
+        <h1>CAPESA - Tienda Deportiva</h1>
+        <p>Todo lo que necesitas para tu deporte favorito</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#acerca">Acerca de nosotros</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#ofertas">Ofertas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="acerca" class="contenedor">
+            <h2>Acerca de CAPESA</h2>
+            <p>En CAPESA, somos una tienda especializada en ropa deportiva e implementos deportivos de alta calidad. Ofrecemos productos para todas las disciplinas deportivas, desde fútbol, baloncesto, hasta deportes de aventura. Nuestra misión es ofrecer los mejores productos para que puedas disfrutar de tus deportes favoritos con la mejor calidad y comodidad.</p>
+            <p>Contamos con un equipo de expertos que selecciona cuidadosamente cada producto, asegurando que nuestros clientes reciban solo lo mejor para sus necesidades deportivas.</p>
+        </div>
+
+        <div id="productos" class="contenedor">
+            <h2>Productos Disponibles</h2>
+            <div id="productos-lista" class="productos-lista">
+                
+            </div>
+        </div>
+
+        <div id="ofertas" class="contenedor">
+            <h2>Ofertas Especiales</h2>
+            <p>No te pierdas nuestras ofertas. ¡Aprovecha ahora!</p>
+            <div>
+                <h3>Pack de 3 Camisetas Deportivas</h3>
+                <p>$90.00 (Antes $105.00)</p>
+                <button class="whatsapp-btn" onclick="window.location.href='https://wa.me/573137755038'">Comprar Ahora</button>
+            </div>
+        </div>
+
+        <div id="contacto" class="contenedor">
+            <h2>Contacto</h2>
+            <p>Para consultas, por favor escríbenos a:</p>
+            <p>Email: <a href="mailto:ventas@capesa.com">ventas@capesa.com</a></p>
+            <p>Teléfono: 3137755038</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Contacto: ventas@capesa.com | Teléfono: 3137755038</p>
+        <p>&copy; 2024 CAPESA. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="carrito">
+        <h3>Carrito</h3>
+        <ul id="carrito-lista"></ul>
+        <button class="whatsapp-btn" onclick="comprar()">Finalizar Compra</button>
+    </div>
+
+    <script>
+        const productos = [
+            { id: 1, nombre: 'Balón de Fútbol Profesional', precio: 25, imagen: 'https://via.placeholder.com/200x200?text=Balón+Fútbol' },
+            { id: 2, nombre: 'Camiseta Deportiva Nike', precio: 35, imagen: 'https://via.placeholder.com/200x200?text=Camiseta+Nike' },
+            { id: 3, nombre: 'Botas de Fútbol Adidas', precio: 75, imagen: 'https://via.placeholder.com/200x200?text=Botas+Adidas' },
+            { id: 4, nombre: 'Pantalón Deportivo Reebok', precio: 45, imagen: 'https://via.placeholder.com/200x200?text=Pantalón+Reebok' },
+            { id: 5, nombre: 'Malla de Entrenamiento Puma', precio: 30, imagen: 'https://via.placeholder.com/200x200?text=Malla+Puma' },
+            { id: 6, nombre: 'Guantes de Arquero', precio: 40, imagen: 'https://via.placeholder.com/200x200?text=Guantes+Arquero' },
+            { id: 7, nombre: 'Camiseta Deportiva Adidas', precio: 50, imagen: 'https://via.placeholder.com/200x200?text=Camiseta+Adidas' },
+            { id: 8, nombre: 'Pelota de Baloncesto', precio: 30, imagen: 'https://via.placeholder.com/200x200?text=Pelota+Baloncesto' },
+            { id: 9, nombre: 'Zapatillas Running Asics', precio: 85, imagen: 'https://via.placeholder.com/200x200?text=Zapatillas+Asics' },
+            { id: 10, nombre: 'Chaqueta Deportiva Under Armour', precio: 60, imagen: 'https://via.placeholder.com/200x200?text=Chaqueta+Under+Armour' },
+            { id: 11, nombre: 'Pelota de Tenis Wilson', precio: 15, imagen: 'https://via.placeholder.com/200x200?text=Pelota+Tenis' },
+            { id: 12, nombre: 'Banda para Sudor Nike', precio: 10, imagen: 'https://via.placeholder.com/200x200?text=Banda+Nike' },
+            { id: 13, nombre: 'Mochila Deportiva', precio: 35, imagen: 'https://via.placeholder.com/200x200?text=Mochila+Deportiva' },
+            { id: 14, nombre: 'Muñequeras Reebok', precio: 12, imagen: 'https://via.placeholder.com/200x200?text=Muñequeras+Reebok' },
+            { id: 15, nombre: 'Protector Bucal', precio: 8, imagen: 'https://via.placeholder.com/200x200?text=Protector+Bucal' },
+            { id: 16, nombre: 'Reloj Deportivo Garmin', precio: 200, imagen: 'https://via.placeholder.com/200x200?text=Reloj+Garmin' },
+            { id: 17, nombre: 'Rodillera de Protección', precio: 20, imagen: 'https://via.placeholder.com/200x200?text=Rodillera' },
+            { id: 18, nombre: 'Cinturón para Levantamiento', precio: 50, imagen: 'https://via.placeholder.com/200x200?text=Cinturón+Levantamiento' },
+            { id: 19, nombre: 'Kit de Yoga', precio: 60, imagen: 'https://via.placeholder.com/200x200?text=Kit+Yoga' },
+            { id: 20, nombre: 'Gafas de Sol Deportivas', precio: 45, imagen: 'https://via.placeholder.com/200x200?text=Gafas+Sol' },
+            { id: 21, nombre: 'Bandas de Resistencia', precio: 25, imagen: 'https://via.placeholder.com/200x200?text=Bandas+Resistencia' },
+            { id: 22, nombre: 'Polo Deportivo', precio: 30, imagen: 'https://via.placeholder.com/200x200?text=Polo+Deportivo' },
+            { id: 23, nombre: 'Calcetines Deportivos', precio: 15, imagen: 'https://via.placeholder.com/200x200?text=Calcetines+Deportivos' },
+            { id: 24, nombre: 'Camiseta de Ciclismo', precio: 40, imagen: 'https://via.placeholder.com/200x200?text=Camiseta+Ciclismo' },
+            { id: 25, nombre: 'Bandolera de Correr', precio: 20, imagen: 'https://via.placeholder.com/200x200?text=Bandolera+Correr' },
+            { id: 26, nombre: 'Pantalón Corto Running', precio: 25, imagen: 'https://via.placeholder.com/200x200?text=Pantalón+Corto' },
+            { id: 27, nombre: 'Funda para Raqueta de Tenis', precio: 30, imagen: 'https://via.placeholder.com/200x200?text=Funda+Raqueta' },
+            { id: 28, nombre: 'Guantes de Fitness', precio: 20, imagen: 'https://via.placeholder.com/200x200?text=Guantes+Fitness' },
+            { id: 29, nombre: 'Zapatillas de Fútbol', precio: 60, imagen: 'https://via.placeholder.com/200x200?text=Zapatillas+Fútbol' },
+            { id: 30, nombre: 'Bolsa Deportiva', precio: 40, imagen: 'https://via.placeholder.com/200x200?text=Bolsa+Deportiva' },
+            { id: 31, nombre: 'Balón de Rugby', precio: 35, imagen: 'https://via.placeholder.com/200x200?text=Balón+Rugby' },
+            { id: 32, nombre: 'Gorra Deportiva', precio: 15, imagen: 'https://via.placeholder.com/200x200?text=Gorra+Deportiva' },
+            { id: 33, nombre: 'Botellas de Agua Deportivas', precio: 12, imagen: 'https://via.placeholder.com/200x200?text=Botellas+Deportivas' },
+            { id: 34, nombre: 'Silla de Camping Deportiva', precio: 80, imagen: 'https://via.placeholder.com/200x200?text=Silla+Camping' }
+        ];
+
+        let carrito = [];
+
+        
+        const productosLista = document.getElementById("productos-lista");
+
+        productos.forEach((producto) => {
+            let divProducto = document.createElement("div");
+            divProducto.classList.add("producto");
+            divProducto.innerHTML = `
+                <img src="${producto.imagen}" alt="${producto.nombre}">
+                <h3>${producto.nombre}</h3>
+                <p>$${producto.precio}</p>
+                <button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>
+            `;
+            productosLista.appendChild(divProducto);
+        });
+
+        
+        function agregarAlCarrito(id) {
+            const producto = productos.find(p => p.id === id);
+            carrito.push(producto);
+            actualizarCarrito();
+        }
+
+        
+        function actualizarCarrito() {
+            const carritoLista = document.getElementById("carrito-lista");
+            carritoLista.innerHTML = "";
+            carrito.forEach((producto, index) => {
+                let li = document.createElement("li");
+                li.innerHTML = `${producto.nombre} - $${producto.precio} <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+                carritoLista.appendChild(li);
+            });
+        }
+
+        
+        function eliminarDelCarrito(index) {
+            carrito.splice(index, 1);
+            actualizarCarrito();
+        }
+
+        
+        function comprar() {
+            let mensaje = "¡Hola! Quiero comprar los siguientes productos:\n";
+            carrito.forEach((producto) => {
+                mensaje += `${producto.nombre} - $${producto.precio}\n`;
+            });
+            window.open(`https://wa.me/573137755038?text=${encodeURIComponent(mensaje)}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
